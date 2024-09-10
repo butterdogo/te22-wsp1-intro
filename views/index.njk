@@ -1,0 +1,22 @@
+{% extends "layout.njk" %}
+{% block content %}
+
+
+<header>
+    <h1>{{message}}</h1>
+</header>
+<main class="container">
+    <p>Välkommen till min sida</p>
+
+    {% for item in items %}
+      <p>{{item}}</p>
+    {% endfor %}
+
+    <p>Klicka <a href="/om">här</a></p>
+
+
+
+</main>
+
+
+{% endblock %}
