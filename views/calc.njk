@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+{% block content %}
+
+<main class="container">
+
+<h1>Calculator</h1>
+<form action="/calc" method="get">
+<input type="number" name="num1" placeholder="Number 1" value="{{query}}">
+<input type="number" name="num2" placeholder="Number 2" value="{{query}}">
+<button type="submit">Calc</button>
+</form>
+
+{% if sum and num1 and num2 != ''%}
+    <p>{{num1}} + {{num2}} = {{sum}}</p>
+    <p>{{num1}} - {{num2}} = {{dif}}</p>
+    <p>{{num1}} * {{num2}} = {{product}}</p>
+    <p>{{num1}} / {{num2}} = {{kvot}}</p>
+    <p>{{num1}} ^ {{num2}} = {{pot}}</p>
+{% else %}
+<p>Error</p>
+{%endif%}
+</main>
+
+{% endblock %}
